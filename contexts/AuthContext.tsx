@@ -4,13 +4,18 @@ interface UserProfile {
   name: string;
   location: string;
   method: 'mobile' | 'aadhaar';
+  identifier: string;
+  crop: string;
+  loanStatus: 'Active' | 'None';
+  loanAmount?: number;
 }
 
 interface AuthContextType {
   isAuthenticated: boolean;
   user: UserProfile | null;
-  login: (method: 'mobile' | 'aadhaar') => void;
+  login: (method: 'mobile' | 'aadhaar', identifier: string) => void;
   logout: () => void;
+  updateCrop: (crop: string) => void;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -20,7 +25,6 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const [user, setUser] = useState<UserProfile | null>(null);
 
   useEffect(() => {
-    // Check local storage for persistence (optional, keeping it simple for demo)
     const storedAuth = localStorage.getItem('loan4farm_auth');
     if (storedAuth) {
       setIsAuthenticated(true);
@@ -28,11 +32,15 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     }
   }, []);
 
-  const login = (method: 'mobile' | 'aadhaar') => {
+  const login = (method: 'mobile' | 'aadhaar', identifier: string) => {
     const mockUser: UserProfile = {
       name: "Ram Singh Ji",
       location: "Bhopur Village",
-      method
+      method,
+      identifier,
+      crop: "Not Selected",
+      loanStatus: 'Active',
+      loanAmount: 75000
     };
     setIsAuthenticated(true);
     setUser(mockUser);
@@ -45,8 +53,16 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     localStorage.removeItem('loan4farm_auth');
   };
 
+  const updateCrop = (crop: string) => {
+    if (user) {
+      const newUser = { ...user, crop };
+      setUser(newUser);
+      localStorage.setItem('loan4farm_auth', JSON.stringify(newUser));
+    }
+  };
+
   return (
-    <AuthContext.Provider value={{ isAuthenticated, user, login, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated, user, login, logout, updateCrop }}>
       {children}
     </AuthContext.Provider>
   );

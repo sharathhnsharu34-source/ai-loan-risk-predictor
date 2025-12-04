@@ -3,15 +3,17 @@ import { analyzeFarmData } from '../services/geminiService';
 import { FarmData, AnalysisResult } from '../types';
 import { Loader2, Sprout, AlertTriangle, CheckCircle, BarChart3, CloudRain, ShieldCheck, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import FarmerScore from './FarmerScore'; // Added
-import EmergencyLoan from './EmergencyLoan'; // Added
-import LoanWorkflow from './LoanWorkflow'; // Added
+import { useAuth } from '../contexts/AuthContext';
+import FarmerScore from './FarmerScore';
+import EmergencyLoan from './EmergencyLoan';
+import LoanWorkflow from './LoanWorkflow';
 
 const Calculator: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<AnalysisResult | null>(null);
-  const [showWorkflow, setShowWorkflow] = useState(false); // Added
+  const [showWorkflow, setShowWorkflow] = useState(false);
   const { t } = useLanguage();
+  const { updateCrop } = useAuth();
   
   const [formData, setFormData] = useState<FarmData>({
     crop: 'Wheat',
@@ -32,6 +34,9 @@ const Calculator: React.FC = () => {
 
   const handleAnalysis = async () => {
     setLoading(true);
+    // Update profile crop
+    updateCrop(formData.crop);
+    
     const data = await analyzeFarmData(formData, 'Full Risk & Profit Assessment');
     setResult(data);
     setLoading(false);

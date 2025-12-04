@@ -122,9 +122,9 @@ const Login: React.FC = () => {
   const verifyOtp = (code: string) => {
     if (code === '123456') {
       setStep('success');
-      playSound('success');
+      // playSound('success');
       setTimeout(() => {
-        login(method);
+        login(method, inputValue);
       }, 2500);
     } else {
       // Shake effect or error state could go here
@@ -149,10 +149,6 @@ const Login: React.FC = () => {
     } else {
       alert("Voice input not supported in this browser");
     }
-  };
-
-  const playSound = (type: 'click' | 'success') => {
-    // Optional: Add Audio logic here
   };
 
   return (

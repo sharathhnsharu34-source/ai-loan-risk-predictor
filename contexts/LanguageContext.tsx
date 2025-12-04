@@ -10,6 +10,7 @@ interface Translations {
     schemes: string;
     about: string;
     login: string;
+    profile: string;
   };
   hero: {
     badge: string;
@@ -97,10 +98,21 @@ interface Translations {
     upiBtn: string;
     upiSuccess: string;
   };
+  profile: {
+    title: string;
+    farmerProfile: string;
+    idCard: string;
+    loanStatus: string;
+    activeLoan: string;
+    noActiveLoan: string;
+    recentCrop: string;
+    logout: string;
+    securityBadge: string;
+  };
 }
 
 const enTranslations: Translations = {
-    nav: { home: 'Home', features: 'Features', riskEngine: 'Risk Engine', schemes: 'Govt Schemes', about: 'About', login: 'Login' },
+    nav: { home: 'Home', features: 'Features', riskEngine: 'Risk Engine', schemes: 'Govt Schemes', about: 'About', login: 'Login', profile: 'Profile' },
     hero: {
       badge: "India's #1 AI Agri-Fintech Platform",
       titleLine1: "Smart Farming",
@@ -186,13 +198,24 @@ const enTranslations: Translations = {
       insuranceSuccess: "Insurance Policy PMFBY-2025-8822 Issued!",
       upiBtn: "Set UPI AutoPay (₹8,200 on 5th)",
       upiSuccess: "AutoPay Successfully Set!"
+    },
+    profile: {
+      title: "My Kisan Profile",
+      farmerProfile: "Farmer Profile",
+      idCard: "Identity Card",
+      loanStatus: "Loan Status",
+      activeLoan: "Active KCC Loan",
+      noActiveLoan: "No Active Loans",
+      recentCrop: "Recent Crop Entry",
+      logout: "Log Out",
+      securityBadge: "100% Secure"
     }
 };
 
 const translations: Record<LanguageCode, Translations> = {
   EN: enTranslations,
   HI: {
-    nav: { home: 'होम', features: 'विशेषताएं', riskEngine: 'जोखिम इंजन', schemes: 'सरकारी योजनाएं', about: 'हमारे बारे में', login: 'लॉग इन' },
+    nav: { home: 'होम', features: 'विशेषताएं', riskEngine: 'जोखिम इंजन', schemes: 'सरकारी योजनाएं', about: 'हमारे बारे में', login: 'लॉग इन', profile: 'प्रोफ़ाइल' },
     hero: {
       badge: "भारत का #1 एआई एग्री-फिनटेक प्लेटफॉर्म",
       titleLine1: "स्मार्ट खेती",
@@ -278,15 +301,26 @@ const translations: Record<LanguageCode, Translations> = {
       insuranceSuccess: "बीमा पॉलिसी PMFBY-2025-8822 जारी!",
       upiBtn: "UPI AutoPay सेट करें (हर 5 तारीख ₹8,200)",
       upiSuccess: "AutoPay सफलतापूर्वक सेट हो गया!"
+    },
+    profile: {
+      title: "मेरी किसान प्रोफ़ाइल",
+      farmerProfile: "किसान प्रोफ़ाइल",
+      idCard: "पहचान पत्र",
+      loanStatus: "ऋण स्थिति",
+      activeLoan: "सक्रिय KCC ऋण",
+      noActiveLoan: "कोई सक्रिय ऋण नहीं",
+      recentCrop: "हाल की फसल प्रविष्टि",
+      logout: "लॉग आउट करें",
+      securityBadge: "100% सुरक्षित"
     }
   },
   MR: {
-    nav: { home: 'मुख्यपृष्ठ', features: 'वैशिष्ट्ये', riskEngine: 'जोखीम इंजिन', schemes: 'शासकीय योजना', about: 'आमच्याबद्दल', login: 'लॉग इन' },
+    nav: { home: 'मुख्यपृष्ठ', features: 'वैशिष्ट्ये', riskEngine: 'जोखीम इंजिन', schemes: 'शासकीय योजना', about: 'आमच्याबद्दल', login: 'लॉग इन', profile: 'प्रोफाइल' },
     hero: {
       badge: "भारताचे #1 एआई एग्री-फिनटेक प्लॅटफॉर्म",
       titleLine1: "स्मार्ट शेती",
       titleLine2: "आर्थिक भविष्य",
-      description: "हवामान अंदाज, माती परीक्षण आणि सर्वोत्तम कर्ज (₹) मिळवण्यासाठी जेमिनी एआय सह भारतीय शेतकऱ्यांना सक्षम करणे.",
+      description: "हवामान अंदाज, माती परीक्षण आणि सर्वोत्तम कर्ज (₹) मिळवण्यासाठी जेमिनी एआई सह भारतीय शेतकऱ्यांना सक्षम करणे.",
       ctaLoan: "कर्ज पात्रता तपासा",
       ctaMandi: "पिकांचे दर"
     },
@@ -367,10 +401,21 @@ const translations: Record<LanguageCode, Translations> = {
       insuranceSuccess: "विमा पॉलिसी PMFBY-2025-8822 जारी!",
       upiBtn: "UPI AutoPay सेट करा (दर 5 तारखेला ₹8,200)",
       upiSuccess: "AutoPay यशस्वीरित्या सेट केले!"
+    },
+    profile: {
+      title: "माझे शेतकरी प्रोफाइल",
+      farmerProfile: "शेतकरी प्रोफाइल",
+      idCard: "ओळखपत्र",
+      loanStatus: "कर्ज स्थिती",
+      activeLoan: "सक्रिय KCC कर्ज",
+      noActiveLoan: "कोणतेही सक्रिय कर्ज नाही",
+      recentCrop: "अलीकडील पीक",
+      logout: "लॉग आउट",
+      securityBadge: "100% सुरक्षित"
     }
   },
   KN: {
-    nav: { home: 'ಮುಖಪುಟ', features: 'ವೈಶಿಷ್ಟ್ಯಗಳು', riskEngine: 'ರಿಸ್ಕ್ ಇಂಜಿನ್', schemes: 'ಯೋಜನೆಗಳು', about: 'ನಮ್ಮ ಬಗ್ಗೆ', login: 'ಲಾಗಿನ್' },
+    nav: { home: 'ಮುಖಪುಟ', features: 'ವೈಶಿಷ್ಟ್ಯಗಳು', riskEngine: 'ರಿಸ್ಕ್ ಇಂಜಿನ್', schemes: 'ಯೋಜನೆಗಳು', about: 'ನಮ್ಮ ಬಗ್ಗೆ', login: 'ಲಾಗಿನ್', profile: 'ಪ್ರೊಫೈಲ್' },
     hero: {
       badge: "ಭಾರತದ #1 AI ಕೃಷಿ-ಫಿನ್ಟೆಕ್ ವೇದಿಕೆ",
       titleLine1: "ಸ್ಮಾರ್ಟ್ ಕೃಷಿ",
@@ -456,10 +501,21 @@ const translations: Record<LanguageCode, Translations> = {
       insuranceSuccess: "ವಿಮಾ ಪಾಲಿಸಿ PMFBY-2025-8822 ನೀಡಲಾಗಿದೆ!",
       upiBtn: "UPI ಆಟೋಪೇ ಸೆಟ್ ಮಾಡಿ (ಪ್ರತಿ 5 ನೇ ತಾರೀಖಿಗೆ ₹8,200)",
       upiSuccess: "ಆಟೋಪೇ ಯಶಸ್ವಿಯಾಗಿ ಸೆಟ್ ಮಾಡಲಾಗಿದೆ!"
+    },
+    profile: {
+      title: "ನನ್ನ ಕಿಸಾನ್ ಪ್ರೊಫೈಲ್",
+      farmerProfile: "ರೈತ ಪ್ರೊಫೈಲ್",
+      idCard: "ಗುರುತಿನ ಚೀಟಿ",
+      loanStatus: "ಸಾಲದ ಸ್ಥಿತಿ",
+      activeLoan: "ಸಕ್ರಿಯ KCC ಸಾಲ",
+      noActiveLoan: "ಯಾವುದೇ ಸಕ್ರಿಯ ಸಾಲವಿಲ್ಲ",
+      recentCrop: "ಇತ್ತೀಚಿನ ಬೆಳೆ",
+      logout: "ಲಾಗ್ ಔಟ್",
+      securityBadge: "100% ಸುರಕ್ಷಿತ"
     }
   },
   TA: {
-    nav: { home: 'முகப்பு', features: 'அம்சங்கள்', riskEngine: 'ரிஸ்க் என்ஜின்', schemes: 'திட்டங்கள்', about: 'எங்களைப் பற்றி', login: 'உள்நுழைய' },
+    nav: { home: 'முகப்பு', features: 'அம்சங்கள்', riskEngine: 'ரிஸ்க் என்ஜின்', schemes: 'திட்டங்கள்', about: 'எங்களைப் பற்றி', login: 'உள்நுழைய', profile: 'சுயவிவரம்' },
     hero: {
       badge: "இந்தியாவின் #1 AI அக்ரி-ஃபின்டெக் தளம்",
       titleLine1: "ஸ்மார்ட் விவசாயம்",
@@ -545,10 +601,21 @@ const translations: Record<LanguageCode, Translations> = {
       insuranceSuccess: "காப்பீட்டுக் கொள்கை PMFBY-2025-8822 வழங்கப்பட்டது!",
       upiBtn: "UPI ஆட்டோபே அமைக்கவும் (ஒவ்வொரு 5 ஆம் தேதியும் ₹8,200)",
       upiSuccess: "ஆட்டோபே வெற்றிகரமாக அமைக்கப்பட்டது!"
+    },
+    profile: {
+      title: "என் கிசான் சுயவிவரம்",
+      farmerProfile: "விவசாயி சுயவிவரம்",
+      idCard: "அடையாள அட்டை",
+      loanStatus: "கடன் நிலை",
+      activeLoan: "செயலில் உள்ள KCC கடன்",
+      noActiveLoan: "செயலில் கடன் இல்லை",
+      recentCrop: "சமீபத்திய பயிர்",
+      logout: "வெளியேறு",
+      securityBadge: "100% பாதுகாப்பானது"
     }
   },
   TE: {
-    nav: { home: 'హోమ్', features: 'ఫీచర్లు', riskEngine: 'రిస్క్ ఇంజిన్', schemes: 'పథకాలు', about: 'మా గురించి', login: 'లాగిన్' },
+    nav: { home: 'హోమ్', features: 'ఫీచర్లు', riskEngine: 'రిస్క్ ఇంజిన్', schemes: 'పథకాలు', about: 'మా గురించి', login: 'లాగిన్', profile: 'ప్రొఫైల్' },
     hero: {
       badge: "భారతదేశపు #1 AI అగ్రి-ఫిన్‌టెక్ ప్లాట్‌ఫారమ్",
       titleLine1: "స్మార్ట్ వ్యవసాయం",
@@ -634,6 +701,17 @@ const translations: Record<LanguageCode, Translations> = {
       insuranceSuccess: "బీమా పాలసీ PMFBY-2025-8822 జారీ చేయబడింది!",
       upiBtn: "UPI ఆటోపే సెట్ చేయండి (ప్రతి 5వ తేదీన ₹8,200)",
       upiSuccess: "ఆటోపే విజయవంతంగా సెట్ చేయబడింది!"
+    },
+    profile: {
+      title: "నా కిసాన్ ప్రొఫైల్",
+      farmerProfile: "రైతు ప్రొఫైల్",
+      idCard: "గుర్తింపు కార్డు",
+      loanStatus: "రుణ స్థితి",
+      activeLoan: "యాక్టివ్ KCC లోన్",
+      noActiveLoan: "యాక్టివ్ లోన్లు లేవు",
+      recentCrop: "ఇటీవలి పంట",
+      logout: "లాగ్ అవుట్",
+      securityBadge: "100% సురక్షితం"
     }
   },
   GU: { ...enTranslations } as any,
@@ -654,7 +732,16 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
   const getTranslations = (code: LanguageCode) => {
     const target = translations[code];
     const fallback = translations['EN'];
-    return { ...fallback, ...target, nav: { ...fallback.nav, ...target?.nav }, workflow: { ...fallback.workflow, ...target?.workflow }, whatsapp: {...fallback.whatsapp, ...target?.whatsapp}, emergency: {...fallback.emergency, ...target?.emergency}, score: {...fallback.score, ...target?.score} };
+    return { 
+      ...fallback, 
+      ...target, 
+      nav: { ...fallback.nav, ...target?.nav }, 
+      workflow: { ...fallback.workflow, ...target?.workflow }, 
+      whatsapp: {...fallback.whatsapp, ...target?.whatsapp}, 
+      emergency: {...fallback.emergency, ...target?.emergency}, 
+      score: {...fallback.score, ...target?.score},
+      profile: {...fallback.profile, ...target?.profile}
+    };
   };
 
   const value = {

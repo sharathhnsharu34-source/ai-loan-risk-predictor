@@ -1,16 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { Sprout, Globe, ChevronDown, Moon, Sun, Bell, MessageSquare } from 'lucide-react';
+import { Sprout, Globe, ChevronDown, Moon, Sun, Bell, MessageSquare, User } from 'lucide-react';
 import { useLanguage, LanguageCode } from '../contexts/LanguageContext';
 import { useTheme } from '../contexts/ThemeContext';
 import { useNotification } from '../contexts/NotificationContext';
+import { useAuth } from '../contexts/AuthContext';
+import ProfileModal from './ProfileModal';
 
 const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [langMenuOpen, setLangMenuOpen] = useState(false);
   const [inboxOpen, setInboxOpen] = useState(false);
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
+  
   const { language, setLanguage, t } = useLanguage();
   const { theme, toggleTheme } = useTheme();
   const { notifications, unreadCount, markAsRead } = useNotification();
+  const { user } = useAuth();
 
   const languages: { code: LanguageCode; label: string }[] = [
     { code: 'EN', label: 'English' },
@@ -135,11 +140,20 @@ const Header: React.FC = () => {
             )}
           </div>
 
-          <button className={`hidden sm:block px-5 py-2 text-sm font-semibold rounded-full transition-all backdrop-blur-sm ${scrolled ? 'bg-emerald-600 text-white hover:bg-emerald-700 shadow-md' : 'bg-white/20 text-white hover:bg-white/30 border border-white/20'}`}>
-            {t.nav.login}
+          {/* Profile Button */}
+          <button 
+            onClick={() => setIsProfileOpen(true)}
+            className={`hidden sm:flex items-center gap-2 px-4 py-1.5 text-sm font-semibold rounded-full transition-all backdrop-blur-sm ${scrolled ? 'bg-emerald-600 text-white hover:bg-emerald-700 shadow-md' : 'bg-white/20 text-white hover:bg-white/30 border border-white/20'}`}
+          >
+            <User size={16} />
+            <span>{user ? user.name.split(' ')[0] : t.nav.profile}</span>
           </button>
         </div>
       </div>
+      
+      {/* Profile Modal */}
+      <ProfileModal isOpen={isProfileOpen} onClose={() => setIsProfileOpen(false)} />
+
     </header>
   );
 };
