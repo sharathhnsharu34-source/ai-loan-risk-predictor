@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useMemo } from 'react';
 import { CloudRain, Sprout, TrendingUp, ShieldCheck, Calculator, Languages } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -11,50 +10,50 @@ const Features: React.FC = () => {
     {
       id: 1,
       icon: <CloudRain size={24} />,
-      color: "text-blue-600",
-      bg: "bg-blue-50",
-      border: "border-blue-200",
-      iconBg: "bg-blue-100 text-blue-600"
+      color: "text-blue-600 dark:text-blue-400",
+      bg: "bg-blue-50 dark:bg-blue-900/20",
+      border: "border-blue-200 dark:border-blue-800",
+      iconBg: "bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400"
     },
     {
       id: 2,
       icon: <Sprout size={24} />,
-      color: "text-emerald-600",
-      bg: "bg-emerald-50",
-      border: "border-emerald-200",
-      iconBg: "bg-emerald-100 text-emerald-600"
+      color: "text-emerald-600 dark:text-emerald-400",
+      bg: "bg-emerald-50 dark:bg-emerald-900/20",
+      border: "border-emerald-200 dark:border-emerald-800",
+      iconBg: "bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400"
     },
     {
       id: 3,
       icon: <TrendingUp size={24} />,
-      color: "text-purple-600",
-      bg: "bg-purple-50",
-      border: "border-purple-200",
-      iconBg: "bg-purple-100 text-purple-600"
+      color: "text-purple-600 dark:text-purple-400",
+      bg: "bg-purple-50 dark:bg-purple-900/20",
+      border: "border-purple-200 dark:border-purple-800",
+      iconBg: "bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-400"
     },
     {
       id: 4,
       icon: <ShieldCheck size={24} />,
-      color: "text-amber-600",
-      bg: "bg-amber-50",
-      border: "border-amber-200",
-      iconBg: "bg-amber-100 text-amber-600"
+      color: "text-amber-600 dark:text-amber-400",
+      bg: "bg-amber-50 dark:bg-amber-900/20",
+      border: "border-amber-200 dark:border-amber-800",
+      iconBg: "bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-400"
     },
     {
       id: 5,
       icon: <Calculator size={24} />,
-      color: "text-cyan-600",
-      bg: "bg-cyan-50",
-      border: "border-cyan-200",
-      iconBg: "bg-cyan-100 text-cyan-600"
+      color: "text-cyan-600 dark:text-cyan-400",
+      bg: "bg-cyan-50 dark:bg-cyan-900/20",
+      border: "border-cyan-200 dark:border-cyan-800",
+      iconBg: "bg-cyan-100 dark:bg-cyan-900/40 text-cyan-600 dark:text-cyan-400"
     },
     {
       id: 6,
       icon: <Languages size={24} />,
-      color: "text-pink-600",
-      bg: "bg-pink-50",
-      border: "border-pink-200",
-      iconBg: "bg-pink-100 text-pink-600"
+      color: "text-pink-600 dark:text-pink-400",
+      bg: "bg-pink-50 dark:bg-pink-900/20",
+      border: "border-pink-200 dark:border-pink-800",
+      iconBg: "bg-pink-100 dark:bg-pink-900/40 text-pink-600 dark:text-pink-400"
     }
   ], []);
 
@@ -78,13 +77,13 @@ const Features: React.FC = () => {
   const center = { x: 400, y: 400 }; // SVG canvas center
 
   return (
-    <section id="features" className="relative py-24 bg-gradient-to-b from-white via-emerald-50/30 to-white overflow-hidden">
+    <section id="features" className="relative py-24 bg-gradient-to-b from-white via-emerald-50/30 to-white dark:from-slate-950 dark:via-emerald-950/10 dark:to-slate-950 overflow-hidden transition-colors duration-300">
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4">
-            {t.features.sectionTitle} <span className="text-emerald-600">{t.features.sectionTitleHighlight}</span>
+          <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
+            {t.features.sectionTitle} <span className="text-emerald-600 dark:text-emerald-400">{t.features.sectionTitleHighlight}</span>
           </h2>
-          <p className="text-slate-600 max-w-2xl mx-auto text-lg">
+          <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-lg">
             {t.features.sectionDesc}
           </p>
         </div>
@@ -94,21 +93,21 @@ const Features: React.FC = () => {
           {features.map((feature, idx) => (
             <div 
               key={feature.id}
-              className={`p-6 rounded-xl border transition-all ${activeFeature === idx ? `${feature.bg} ${feature.border} shadow-md` : 'bg-white border-slate-100 shadow-sm'}`}
+              className={`p-6 rounded-xl border transition-all ${activeFeature === idx ? `${feature.bg} ${feature.border} shadow-md` : 'bg-white dark:bg-slate-800 border-slate-100 dark:border-slate-700 shadow-sm'}`}
               onClick={() => setActiveFeature(idx)}
             >
               <div className="flex items-center gap-4 mb-2">
                 <div className={`p-2 rounded-lg ${feature.iconBg}`}>
                   {feature.icon}
                 </div>
-                <h3 className="text-lg font-bold text-slate-800">{feature.title}</h3>
+                <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100">{feature.title}</h3>
               </div>
-              <p className="text-sm text-slate-600">{feature.desc}</p>
+              <p className="text-sm text-slate-600 dark:text-slate-400">{feature.desc}</p>
             </div>
           ))}
         </div>
 
-        {/* Desktop View: Radial Hub & Spoke - LIGHT THEME */}
+        {/* Desktop View: Radial Hub & Spoke */}
         <div className="hidden lg:block relative h-[800px] w-full max-w-[800px] mx-auto">
           
           {/* SVG Connector Layer */}
@@ -121,7 +120,7 @@ const Features: React.FC = () => {
             </defs>
             
             {/* Pulsing Core Glow */}
-            <circle cx="400" cy="400" r="140" fill="url(#coreGradientLight)" className="animate-pulse-slow" />
+            <circle cx="400" cy="400" r="140" fill="url(#coreGradientLight)" className="animate-pulse-slow opacity-60 dark:opacity-40" />
             
             {/* Connecting Dashed Lines */}
             {features.map((_, idx) => {
@@ -133,7 +132,8 @@ const Features: React.FC = () => {
                   key={`line-${idx}`}
                   x1="400" y1="400" 
                   x2={x} y2={y} 
-                  stroke="#cbd5e1" 
+                  stroke="currentColor" 
+                  className="text-slate-300 dark:text-slate-700"
                   strokeWidth="2" 
                   strokeDasharray="6,4" 
                 />
@@ -143,25 +143,25 @@ const Features: React.FC = () => {
             {/* Strategic Arcs */}
             {/* Top Arc: Yield (Green) */}
             <path d="M 250 200 Q 400 50 550 200" fill="none" stroke="#10b981" strokeWidth="6" strokeOpacity="1" strokeLinecap="round" />
-            <text x="400" y="100" textAnchor="middle" fill="#059669" fontSize="14" fontWeight="bold" letterSpacing="1">{t.features.diagram.yield}</text>
+            <text x="400" y="100" textAnchor="middle" fill="#059669" className="dark:fill-emerald-400" fontSize="14" fontWeight="bold" letterSpacing="1">{t.features.diagram.yield}</text>
 
             {/* Right Arc: Risk (Amber) */}
             <path d="M 600 300 Q 750 400 600 500" fill="none" stroke="#f59e0b" strokeWidth="6" strokeOpacity="1" strokeLinecap="round" />
-            <text x="690" y="400" textAnchor="middle" fill="#d97706" fontSize="14" fontWeight="bold" letterSpacing="1" transform="rotate(90, 690, 400)">{t.features.diagram.risk}</text>
+            <text x="690" y="400" textAnchor="middle" fill="#d97706" className="dark:fill-amber-400" fontSize="14" fontWeight="bold" letterSpacing="1" transform="rotate(90, 690, 400)">{t.features.diagram.risk}</text>
 
             {/* Left Arc: Growth (Blue) */}
             <path d="M 200 500 Q 50 400 200 300" fill="none" stroke="#3b82f6" strokeWidth="6" strokeOpacity="1" strokeLinecap="round" />
-            <text x="110" y="400" textAnchor="middle" fill="#2563eb" fontSize="14" fontWeight="bold" letterSpacing="1" transform="rotate(-90, 110, 400)">{t.features.diagram.growth}</text>
+            <text x="110" y="400" textAnchor="middle" fill="#2563eb" className="dark:fill-blue-400" fontSize="14" fontWeight="bold" letterSpacing="1" transform="rotate(-90, 110, 400)">{t.features.diagram.growth}</text>
 
           </svg>
 
           {/* Central AI Core Node */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full bg-white border-4 border-emerald-50 flex flex-col items-center justify-center z-20 shadow-[0_10px_40px_rgba(0,0,0,0.1)]">
-            <div className="p-4 rounded-full bg-emerald-100 mb-2">
-               <Sprout size={40} className="text-emerald-600" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full bg-white dark:bg-slate-800 border-4 border-emerald-50 dark:border-emerald-900/30 flex flex-col items-center justify-center z-20 shadow-[0_10px_40px_rgba(0,0,0,0.1)] transition-colors duration-300">
+            <div className="p-4 rounded-full bg-emerald-100 dark:bg-emerald-900/50 mb-2">
+               <Sprout size={40} className="text-emerald-600 dark:text-emerald-400" />
             </div>
-            <span className="text-emerald-800 font-bold tracking-widest text-sm">GEMINI AI</span>
-            <span className="text-[10px] text-emerald-600 font-medium mt-1 uppercase bg-emerald-100 px-2 py-0.5 rounded-full">Active</span>
+            <span className="text-emerald-800 dark:text-emerald-200 font-bold tracking-widest text-sm">GEMINI AI</span>
+            <span className="text-[10px] text-emerald-600 dark:text-emerald-300 font-medium mt-1 uppercase bg-emerald-100 dark:bg-emerald-900/40 px-2 py-0.5 rounded-full">Active</span>
           </div>
 
           {/* Orbiting Feature Nodes */}
@@ -180,16 +180,16 @@ const Features: React.FC = () => {
                  onMouseEnter={() => setActiveFeature(idx)}
                >
                  {/* The Node Circle */}
-                 <div className={`w-20 h-20 rounded-full flex items-center justify-center border-2 transition-all duration-300 shadow-xl ${isActive ? 'bg-white border-emerald-500 scale-110 shadow-emerald-200' : 'bg-white border-slate-200 hover:border-emerald-300'}`}>
-                   <div className={`${isActive ? 'text-emerald-600' : 'text-slate-400'} transition-colors`}>
+                 <div className={`w-20 h-20 rounded-full flex items-center justify-center border-2 transition-all duration-300 shadow-xl ${isActive ? 'bg-white dark:bg-slate-800 border-emerald-500 scale-110 shadow-emerald-200 dark:shadow-emerald-900/50' : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:border-emerald-300'}`}>
+                   <div className={`${isActive ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-400 dark:text-slate-500'} transition-colors`}>
                      {feature.icon}
                    </div>
                  </div>
 
                  {/* The Floating Card */}
-                 <div className={`absolute top-24 left-1/2 -translate-x-1/2 w-72 bg-white p-5 rounded-lg border-t-4 shadow-xl transition-all duration-500 z-40 ${isActive ? `opacity-100 translate-y-0 ${feature.border.replace('border', 'border-t')} ${feature.border.replace('border', 'border')}` : 'opacity-0 translate-y-4 pointer-events-none'}`}>
+                 <div className={`absolute top-24 left-1/2 -translate-x-1/2 w-72 bg-white dark:bg-slate-800 p-5 rounded-lg border-t-4 shadow-xl transition-all duration-500 z-40 ${isActive ? `opacity-100 translate-y-0 ${feature.border.replace('border', 'border-t')} ${feature.border.replace('border', 'border')}` : 'opacity-0 translate-y-4 pointer-events-none'}`}>
                    <h4 className={`font-bold mb-2 text-lg ${feature.color}`}>{feature.title}</h4>
-                   <p className="text-sm text-slate-600 leading-relaxed">{feature.desc}</p>
+                   <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{feature.desc}</p>
                  </div>
                </div>
              );

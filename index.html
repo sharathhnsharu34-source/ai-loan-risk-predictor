@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
+        darkMode: 'class',
         theme: {
           extend: {
             fontFamily: {
@@ -33,6 +34,11 @@
         background-color: #ffffff;
         color: #1e293b;
         overflow-x: hidden;
+        transition: background-color 0.3s, color 0.3s;
+      }
+      .dark body {
+        background-color: #020617; /* slate-950 */
+        color: #f1f5f9; /* slate-100 */
       }
       .scrollbar-hide::-webkit-scrollbar {
           display: none;

@@ -57,16 +57,16 @@ const GovernmentSchemes: React.FC = () => {
   ];
 
   return (
-    <section id="schemes" className="py-20 bg-white border-t border-slate-100">
+    <section id="schemes" className="py-20 bg-white dark:bg-slate-950 border-t border-slate-100 dark:border-slate-900 transition-colors duration-300">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <div className="inline-block p-3 bg-emerald-100 rounded-full mb-4">
-            <Landmark size={32} className="text-emerald-700" />
+          <div className="inline-block p-3 bg-emerald-100 dark:bg-emerald-900/30 rounded-full mb-4">
+            <Landmark size={32} className="text-emerald-700 dark:text-emerald-400" />
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
             {t.schemes.title}
           </h2>
-          <p className="text-slate-600 max-w-2xl mx-auto text-lg">
+          <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-lg">
             {t.schemes.subtitle}
           </p>
         </div>
@@ -75,19 +75,19 @@ const GovernmentSchemes: React.FC = () => {
           {schemes.map((scheme) => (
             <div 
               key={scheme.id} 
-              className={`group bg-white p-6 rounded-xl border-l-4 ${scheme.color} shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col justify-between`}
+              className={`group bg-white dark:bg-slate-800 p-6 rounded-xl border-l-4 ${scheme.color} shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col justify-between`}
             >
               <div>
                 <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-xl font-bold text-slate-800">{scheme.name}</h3>
+                  <h3 className="text-xl font-bold text-slate-800 dark:text-slate-100">{scheme.name}</h3>
                   <img 
                     src={`https://ui-avatars.com/api/?name=${scheme.name}&background=random&color=fff&size=40&font-size=0.4`} 
                     alt={scheme.name}
                     className="w-10 h-10 rounded-full opacity-80"
                   />
                 </div>
-                <h4 className="text-sm font-semibold text-slate-500 mb-3 uppercase tracking-wide">{scheme.fullName}</h4>
-                <p className="text-slate-600 mb-6 leading-relaxed">
+                <h4 className="text-sm font-semibold text-slate-500 dark:text-slate-400 mb-3 uppercase tracking-wide">{scheme.fullName}</h4>
+                <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
                   {scheme.desc}
                 </p>
               </div>
@@ -96,7 +96,7 @@ const GovernmentSchemes: React.FC = () => {
                 href={scheme.url} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-emerald-600 font-semibold group-hover:text-emerald-700 transition-colors"
+                className="inline-flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-semibold group-hover:text-emerald-700 dark:group-hover:text-emerald-300 transition-colors"
               >
                 {t.schemes.btnText} <ExternalLink size={16} />
               </a>
