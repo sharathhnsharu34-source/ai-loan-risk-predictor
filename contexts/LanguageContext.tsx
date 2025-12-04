@@ -7,6 +7,7 @@ interface Translations {
     home: string;
     features: string;
     riskEngine: string;
+    schemes: string; // Added
     about: string;
     login: string;
   };
@@ -48,10 +49,15 @@ interface Translations {
     resultBreakeven: string;
     resultCap: string;
     resultCost: string;
-    resultAlternatives: string; // Added
+    resultAlternatives: string;
     reportTitle: string;
     reportClimate: string;
     reportMandi: string;
+  };
+  schemes: { // Added section
+    title: string;
+    subtitle: string;
+    btnText: string;
   };
   footer: {
     tagline: string;
@@ -62,7 +68,7 @@ interface Translations {
 
 const translations: Record<LanguageCode, Translations> = {
   EN: {
-    nav: { home: 'Home', features: 'Features', riskEngine: 'Risk Engine', about: 'About', login: 'Login' },
+    nav: { home: 'Home', features: 'Features', riskEngine: 'Risk Engine', schemes: 'Govt Schemes', about: 'About', login: 'Login' },
     hero: {
       badge: "India's #1 AI Agri-Fintech Platform",
       titleLine1: "Smart Farming",
@@ -106,6 +112,11 @@ const translations: Record<LanguageCode, Translations> = {
       reportClimate: "Climate & Soil Health",
       reportMandi: "Mandi Intelligence"
     },
+    schemes: {
+      title: "Government Schemes",
+      subtitle: "Direct access to central and state agricultural welfare programs.",
+      btnText: "Visit Portal"
+    },
     footer: {
       tagline: "Empowering Indian Kisan with AI-driven financial insights.",
       links: { privacy: "Privacy Policy", terms: "Terms of Service", support: "Contact Support" },
@@ -113,7 +124,7 @@ const translations: Record<LanguageCode, Translations> = {
     }
   },
   HI: {
-    nav: { home: 'होम', features: 'विशेषताएं', riskEngine: 'जोखिम इंजन', about: 'हमारे बारे में', login: 'लॉग इन' },
+    nav: { home: 'होम', features: 'विशेषताएं', riskEngine: 'जोखिम इंजन', schemes: 'सरकारी योजनाएं', about: 'हमारे बारे में', login: 'लॉग इन' },
     hero: {
       badge: "भारत का #1 एआई एग्री-फिनटेक प्लेटफॉर्म",
       titleLine1: "स्मार्ट खेती",
@@ -157,6 +168,11 @@ const translations: Record<LanguageCode, Translations> = {
       reportClimate: "जलवायु और मिट्टी",
       reportMandi: "मंडी खुफिया"
     },
+    schemes: {
+      title: "सरकारी योजनाएं",
+      subtitle: "केंद्रीय और राज्य कृषि कल्याण कार्यक्रमों तक सीधी पहुंच।",
+      btnText: "पोर्टल पर जाएं"
+    },
     footer: {
       tagline: "एआई-संचालित वित्तीय अंतर्दृष्टि के साथ भारतीय किसान को सशक्त बनाना।",
       links: { privacy: "गोपनीयता नीति", terms: "सेवा की शर्तें", support: "संपर्क करें" },
@@ -164,7 +180,7 @@ const translations: Record<LanguageCode, Translations> = {
     }
   },
   MR: {
-    nav: { home: 'मुख्यपृष्ठ', features: 'वैशिष्ट्ये', riskEngine: 'जोखीम इंजिन', about: 'आमच्याबद्दल', login: 'लॉग इन' },
+    nav: { home: 'मुख्यपृष्ठ', features: 'वैशिष्ट्ये', riskEngine: 'जोखीम इंजिन', schemes: 'शासकीय योजना', about: 'आमच्याबद्दल', login: 'लॉग इन' },
     hero: {
       badge: "भारताचे #1 एआय एग्री-फिनटेक प्लॅटफॉर्म",
       titleLine1: "स्मार्ट शेती",
@@ -208,6 +224,11 @@ const translations: Record<LanguageCode, Translations> = {
       reportClimate: "हवामान आणि माती",
       reportMandi: "मंडी माहिती"
     },
+    schemes: {
+      title: "शासकीय योजना",
+      subtitle: "केंद्रीय आणि राज्य कृषी कल्याण कार्यक्रमांमध्ये थेट प्रवेश.",
+      btnText: "पोर्टलला भेट द्या"
+    },
     footer: {
       tagline: "एआई-आधारित आर्थिक माहितीसह भारतीय शेतकऱ्यांना सक्षम करणे.",
       links: { privacy: "गोपनीयता धोरण", terms: "सेवा अटी", support: "संपर्क" },
@@ -215,7 +236,7 @@ const translations: Record<LanguageCode, Translations> = {
     }
   },
   KN: {
-    nav: { home: 'ಮುಖಪುಟ', features: 'ವೈಶಿಷ್ಟ್ಯಗಳು', riskEngine: 'ರಿಸ್ಕ್ ಎಂಜಿನ್', about: 'ನಮ್ಮ ಬಗ್ಗೆ', login: 'ಲಾಗಿನ್' },
+    nav: { home: 'ಮುಖಪುಟ', features: 'ವೈಶಿಷ್ಟ್ಯಗಳು', riskEngine: 'ರಿಸ್ಕ್ ಎಂಜಿನ್', schemes: 'ಸರ್ಕಾರಿ ಯೋಜನೆಗಳು', about: 'ನಮ್ಮ ಬಗ್ಗೆ', login: 'ಲಾಗಿನ್' },
     hero: {
       badge: "ಭಾರತದ #1 AI ಕೃಷಿ-ಫಿನ್ಟೆಕ್ ವೇದಿಕೆ",
       titleLine1: "ಸ್ಮಾರ್ಟ್ ಕೃಷಿ",
@@ -259,6 +280,11 @@ const translations: Record<LanguageCode, Translations> = {
       reportClimate: "ಹವಾಮಾನ ಮತ್ತು ಮಣ್ಣು",
       reportMandi: "ಮಂಡಿ ಮಾಹಿತಿ"
     },
+    schemes: {
+      title: "ಸರ್ಕಾರಿ ಯೋಜನೆಗಳು",
+      subtitle: "ಕೇಂದ್ರ ಮತ್ತು ರಾಜ್ಯ ಕೃಷಿ ಕಲ್ಯಾಣ ಕಾರ್ಯಕ್ರಮಗಳಿಗೆ ನೇರ ಪ್ರವೇಶ.",
+      btnText: "ಪೋರ್ಟಲ್‌ಗೆ ಭೇಟಿ ನೀಡಿ"
+    },
     footer: {
       tagline: "AI ಆರ್ಥಿಕ ಒಳನೋಟಗಳೊಂದಿಗೆ ಭಾರತೀಯ ರೈತರನ್ನು ಸಬಲೀಕರಣಗೊಳಿಸುವುದು.",
       links: { privacy: "ಗೌಪ್ಯತಾ ನೀತಿ", terms: "ಸೇವಾ ನಿಯಮಗಳು", support: "ಸಂಪರ್ಕಿಸಿ" },
@@ -266,7 +292,7 @@ const translations: Record<LanguageCode, Translations> = {
     }
   },
   TA: {
-    nav: { home: 'முகப்பு', features: 'அம்சங்கள்', riskEngine: 'ரிஸ்க் என்ஜின்', about: 'எங்களை பற்றி', login: 'உள்நுழைக' },
+    nav: { home: 'முகப்பு', features: 'அம்சங்கள்', riskEngine: 'ரிஸ்க் என்ஜின்', schemes: 'திட்டங்கள்', about: 'எங்களை பற்றி', login: 'உள்நுழைக' },
     hero: {
       badge: "இந்தியாவின் #1 AI அக்ரி-பின்டெக் தளம்",
       titleLine1: "ஸ்மார்ட் விவசாயம்",
@@ -310,6 +336,11 @@ const translations: Record<LanguageCode, Translations> = {
       reportClimate: "காலநிலை & மண்",
       reportMandi: "சந்தை நுண்ணறிவு"
     },
+    schemes: {
+      title: "அரசு திட்டங்கள்",
+      subtitle: "மத்திய மற்றும் மாநில விவசாய நலத் திட்டங்களுக்கான நேரடி அணுகல்.",
+      btnText: "வலைத்தளத்தைப் பார்வையிடவும்"
+    },
     footer: {
       tagline: "AI நிதி நுண்ணறிவுகளுடன் இந்திய விவசாயிகளை மேம்படுத்துதல்.",
       links: { privacy: "தனியுரிமைக் கொள்கை", terms: "விதிமுறைகள்", support: "தொடர்பு" },
@@ -317,7 +348,7 @@ const translations: Record<LanguageCode, Translations> = {
     }
   },
   TE: {
-    nav: { home: 'హోమ్', features: 'ఫీచర్లు', riskEngine: 'రిస్క్ ఇంజిన్', about: 'మా గురించి', login: 'లాగిన్' },
+    nav: { home: 'హోమ్', features: 'ఫీచర్లు', riskEngine: 'రిస్క్ ఇంజిన్', schemes: 'పథకాలు', about: 'మా గురించి', login: 'లాగిన్' },
     hero: {
       badge: "భారతదేశపు #1 AI అగ్రి-ఫిన్‌టెక్ ప్లాట్‌ఫారమ్",
       titleLine1: "స్మార్ట్ వ్యవసాయం",
@@ -361,6 +392,11 @@ const translations: Record<LanguageCode, Translations> = {
       reportClimate: "వాతావరణం & నేల",
       reportMandi: "మార్కెట్ సమాచారం"
     },
+    schemes: {
+      title: "ప్రభుత్వ పథకాలు",
+      subtitle: "కేంద్ర మరియు రాష్ట్ర వ్యవసాయ సంక్షేమ పథకాలకు ప్రత్యక్ష ప్రాప్యత.",
+      btnText: "పోర్టల్ సందర్శించండి"
+    },
     footer: {
       tagline: "AI ఆర్థిక అంతర్దృష్టులతో భారతీయ రైతులను శక్తివంతం చేయడం.",
       links: { privacy: "గోప్యతా విధానం", terms: "నిబంధనలు", support: "సంప్రదించండి" },
@@ -368,7 +404,7 @@ const translations: Record<LanguageCode, Translations> = {
     }
   },
   GU: {
-    nav: { home: 'હોમ', features: 'વિશેષતાઓ', riskEngine: 'જોખમ એન્જિન', about: 'અમારા વિશે', login: 'લૉગિન' },
+    nav: { home: 'હોમ', features: 'વિશેષતાઓ', riskEngine: 'જોખમ એન્જિન', schemes: 'યોજનાઓ', about: 'અમારા વિશે', login: 'લૉગિન' },
     hero: {
       badge: "ભારતનું #1 AI એગ્રી-ફિનટેક પ્લેટફોર્મ",
       titleLine1: "સ્માર્ટ ખેતી",
@@ -411,6 +447,11 @@ const translations: Record<LanguageCode, Translations> = {
       reportTitle: "AI કૃષિ રિપોર્ટ",
       reportClimate: "હવામાન અને જમીન",
       reportMandi: "મંડી માહિતી"
+    },
+    schemes: {
+      title: "સરકારી યોજનાઓ",
+      subtitle: "કેન્દ્ર અને રાજ્ય કૃષિ કલ્યાણ કાર્યક્રમોની સીધી ઍક્સેસ.",
+      btnText: "પોર્ટલની મુલાકાત લો"
     },
     footer: {
       tagline: "AI સંચાલિત આર્થિક આંતરદૃષ્ટિ સાથે ભારતીય ખેડૂતને સશક્તિકરણ.",

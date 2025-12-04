@@ -43,6 +43,7 @@ const Header: React.FC = () => {
           <a href="#home" className={`text-sm font-medium transition-colors ${scrolled ? 'text-slate-600 hover:text-emerald-600' : 'text-slate-200 hover:text-white'}`}>{t.nav.home}</a>
           <a href="#features" className={`text-sm font-medium transition-colors ${scrolled ? 'text-slate-600 hover:text-emerald-600' : 'text-slate-200 hover:text-white'}`}>{t.nav.features}</a>
           <a href="#calculator" className={`text-sm font-medium transition-colors ${scrolled ? 'text-slate-600 hover:text-emerald-600' : 'text-slate-200 hover:text-white'}`}>{t.nav.riskEngine}</a>
+          <a href="#schemes" className={`text-sm font-medium transition-colors ${scrolled ? 'text-slate-600 hover:text-emerald-600' : 'text-slate-200 hover:text-white'}`}>{t.nav.schemes}</a>
           <a href="#footer" className={`text-sm font-medium transition-colors ${scrolled ? 'text-slate-600 hover:text-emerald-600' : 'text-slate-200 hover:text-white'}`}>{t.nav.about}</a>
         </nav>
 
