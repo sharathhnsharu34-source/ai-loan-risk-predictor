@@ -1,0 +1,7 @@
+{
+  "name": "Loan4Farm - AI Agri-Financial Suite",
+  "description": "Professional agricultural financial planning suite featuring AI climate forecasting, loan risk calculation, and market predictions.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
