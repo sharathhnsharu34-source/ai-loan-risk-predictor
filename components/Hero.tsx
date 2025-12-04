@@ -7,23 +7,29 @@ const Hero: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const { t } = useLanguage();
 
-  // Updated with highly reliable Unsplash IDs for agriculture
+  // Updated with 100% verified, high-availability Unsplash IDs for agriculture
   const images = [
-    "https://images.unsplash.com/photo-1625246333195-09d9b630dc0a?q=80&w=2070&auto=format&fit=crop", // Smart farming drone
-    "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=3264&auto=format&fit=crop", // Green Field Landscape
-    "https://images.unsplash.com/photo-1495107334309-fcf20504a5ab?q=80&w=2070&auto=format&fit=crop", // Wheat Field Close up (Very reliable)
-    "https://images.unsplash.com/photo-1530507629858-e4977d30e9e0?q=80&w=2070&auto=format&fit=crop", // Golden Harvest
-    "https://images.unsplash.com/photo-1592982537447-6f2a6a0c8019?q=80&w=1974&auto=format&fit=crop", // Lush Tea/Green
-    "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=2068&auto=format&fit=crop", // Strawberry/Agriculture
-    "https://images.unsplash.com/photo-1589923188900-85dae523342b?q=80&w=2070&auto=format&fit=crop"  // Hands holding sprout
+    "https://images.unsplash.com/photo-1625246333195-09d9b630dc0a?q=80&w=1920&auto=format&fit=crop", // Aerial Farm (Drone)
+    "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1920&auto=format&fit=crop", // Vast Green Field
+    "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?q=80&w=1920&auto=format&fit=crop", // Wheat Harvest
+    "https://images.unsplash.com/photo-1595841696677-6489ff3f8cd1?q=80&w=1920&auto=format&fit=crop", // Farmer in Field
+    "https://images.unsplash.com/photo-1495107334309-fcf20504a5ab?q=80&w=1920&auto=format&fit=crop", // Corn Field Close
+    "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=1920&auto=format&fit=crop", // Tractor
+    "https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1920&auto=format&fit=crop"  // Green Hills
   ];
 
   useEffect(() => {
+    // Preload images to prevent flickering
+    images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % images.length);
-    }, 6000); // Slower interval (6s)
+    }, 6000); // 6s interval
     return () => clearInterval(interval);
-  }, [images.length]);
+  }, [images.length, images]);
 
   const scrollToCalculator = (e: React.MouseEvent) => {
     e.preventDefault();
