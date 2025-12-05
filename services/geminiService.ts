@@ -44,9 +44,9 @@ export const analyzeFarmData = async (data: FarmData, mode: string): Promise<Ana
     2. **Revenue**: Yield (Qtl/acre) * Market Price (MSP/Mandi). 
     3. **Net Profit**: (Revenue - Cost) * Land Size.
     4. **Risk Calculation**:
-       - **SAFE**: Loan is < 60% of Net Profit.
-       - **MODERATE**: Loan is 60-90% of Net Profit.
-       - **HIGH RISK**: Loan > Net Profit (High default probability).
+       - **SAFE**: Loan is <= 50% of Projected Gross Revenue.
+       - **MODERATE**: Loan is 50-75% of Projected Gross Revenue.
+       - **HIGH RISK**: Loan > 75% of Projected Gross Revenue (High default probability).
     5. **Alternatives**: Suggest 3 specific alternative crops suitable for ${data.soilType} soil in ${data.location} that might have lower risk or better market rates.
 
     OUTPUT REQUIREMENTS:
@@ -121,7 +121,7 @@ const getSmartMockData = (data: FarmData): AnalysisResult => {
 
   // 3. Risk Algorithm
   // If profit is negative, it's immediately High Risk (100)
-  // Otherwise, calculate Loan-to-Profit Ratio
+  // Otherwise, calculate Loan-to-Revenue Ratio (Repayment Capacity)
   let riskScore = 0;
   let riskLevel: 'Low' | 'Medium' | 'High' = 'Low';
   let explanation = "";
@@ -131,20 +131,24 @@ const getSmartMockData = (data: FarmData): AnalysisResult => {
     riskLevel = 'High';
     explanation = "Projected loss due to high input costs. Loan repayment highly risky.";
   } else {
-    const loanRatio = data.loanAmount / netProfit;
+    // Risk Calculation based on Revenue (Repayment Capacity)
+    // Safe: Loan < 50% of Gross Revenue
+    // Medium: Loan 50-75% of Gross Revenue
+    // High: Loan > 75% of Gross Revenue
+    const loanRatio = data.loanAmount / grossRevenue;
     
-    if (loanRatio < 0.6) {
-      riskScore = 20 + Math.round(loanRatio * 20); // 20-32
+    if (loanRatio < 0.5) {
+      riskScore = 20 + Math.round(loanRatio * 40); // 20-40
       riskLevel = 'Low';
-      explanation = "Loan amount is comfortably within projected net profit margins.";
-    } else if (loanRatio < 0.9) {
-      riskScore = 50 + Math.round((loanRatio - 0.6) * 66); // 50-70
+      explanation = "Loan amount is safe and within repayment capacity.";
+    } else if (loanRatio < 0.75) {
+      riskScore = 50 + Math.round((loanRatio - 0.5) * 80); // 50-70
       riskLevel = 'Medium';
-      explanation = "Loan is high relative to profit. Partial collateral recommended.";
+      explanation = "Loan is moderate relative to revenue. Collateral recommended.";
     } else {
-      riskScore = 80 + Math.min(15, Math.round((loanRatio - 0.9) * 50)); // 80-95
+      riskScore = 75 + Math.min(20, Math.round((loanRatio - 0.75) * 80)); // 75-95
       riskLevel = 'High';
-      explanation = "Loan amount exceeds or matches projected profit. High default risk.";
+      explanation = "Loan amount exceeds recommended safety limits based on crop revenue.";
     }
   }
 
@@ -167,7 +171,7 @@ const getSmartMockData = (data: FarmData): AnalysisResult => {
   return {
     riskScore,
     riskLevel,
-    maxLoanSuggestion: Math.max(0, Math.round(netProfit * 0.6)), // Cap at 60% of profit
+    maxLoanSuggestion: Math.max(0, Math.round(grossRevenue * 0.5)), // Cap at 50% of Gross Revenue
     projectedProfit: netProfit,
     estimatedCost: totalCost,
     breakevenPoint: `${Math.round(cropStats.costPerAcre / cropStats.pricePerUnit)} ${cropStats.unit}/acre`,

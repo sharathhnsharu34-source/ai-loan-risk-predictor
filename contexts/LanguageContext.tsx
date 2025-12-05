@@ -102,6 +102,8 @@ interface Translations {
     title: string;
     farmerProfile: string;
     idCard: string;
+    mobile: string;
+    aadhaar: string;
     loanStatus: string;
     activeLoan: string;
     noActiveLoan: string;
@@ -117,7 +119,7 @@ const enTranslations: Translations = {
       badge: "India's #1 AI Agri-Fintech Platform",
       titleLine1: "Smart Farming",
       titleLine2: "Financial Future",
-      description: "Empowering Indian farmers with Gemini AI to forecast climate, analyze soil, and secure the best loans in Rupees (₹).",
+      description: "Empowering Indian farmers with Loan AI to forecast climate, analyze soil, and secure the best loans in Rupees (₹).",
       ctaLoan: "Check Loan Eligibility",
       ctaMandi: "Crop Rates"
     },
@@ -203,6 +205,8 @@ const enTranslations: Translations = {
       title: "My Kisan Profile",
       farmerProfile: "Farmer Profile",
       idCard: "Identity Card",
+      mobile: "Mobile Number",
+      aadhaar: "Aadhaar Card",
       loanStatus: "Loan Status",
       activeLoan: "Active KCC Loan",
       noActiveLoan: "No Active Loans",
@@ -220,7 +224,7 @@ const translations: Record<LanguageCode, Translations> = {
       badge: "भारत का #1 एआई एग्री-फिनटेक प्लेटफॉर्म",
       titleLine1: "स्मार्ट खेती",
       titleLine2: "आर्थिक भविष्य",
-      description: "मौसम का पूर्वानुमान, मिट्टी का विश्लेषण और सर्वोत्तम ऋण (₹) सुरक्षित करने के लिए जेमिनी एआई के साथ भारतीय किसानों को सशक्त बनाना।",
+      description: "मौसम का पूर्वानुमान, मिट्टी का विश्लेषण और सर्वोत्तम ऋण (₹) सुरक्षित करने के लिए लोन एआई के साथ भारतीय किसानों को सशक्त बनाना।",
       ctaLoan: "ऋण पात्रता जांचें",
       ctaMandi: "फसल दर"
     },
@@ -306,6 +310,8 @@ const translations: Record<LanguageCode, Translations> = {
       title: "मेरी किसान प्रोफ़ाइल",
       farmerProfile: "किसान प्रोफ़ाइल",
       idCard: "पहचान पत्र",
+      mobile: "मोबाइल नंबर",
+      aadhaar: "आधार कार्ड",
       loanStatus: "ऋण स्थिति",
       activeLoan: "सक्रिय KCC ऋण",
       noActiveLoan: "कोई सक्रिय ऋण नहीं",
@@ -320,7 +326,7 @@ const translations: Record<LanguageCode, Translations> = {
       badge: "भारताचे #1 एआई एग्री-फिनटेक प्लॅटफॉर्म",
       titleLine1: "स्मार्ट शेती",
       titleLine2: "आर्थिक भविष्य",
-      description: "हवामान अंदाज, माती परीक्षण आणि सर्वोत्तम कर्ज (₹) मिळवण्यासाठी जेमिनी एआई सह भारतीय शेतकऱ्यांना सक्षम करणे.",
+      description: "हवामान अंदाज, माती परीक्षण आणि सर्वोत्तम कर्ज (₹) मिळवण्यासाठी लोन एआई सह भारतीय शेतकऱ्यांना सक्षम करणे.",
       ctaLoan: "कर्ज पात्रता तपासा",
       ctaMandi: "पिकांचे दर"
     },
@@ -406,6 +412,8 @@ const translations: Record<LanguageCode, Translations> = {
       title: "माझे शेतकरी प्रोफाइल",
       farmerProfile: "शेतकरी प्रोफाइल",
       idCard: "ओळखपत्र",
+      mobile: "मोबाइल नंबर",
+      aadhaar: "आधार कार्ड",
       loanStatus: "कर्ज स्थिती",
       activeLoan: "सक्रिय KCC कर्ज",
       noActiveLoan: "कोणतेही सक्रिय कर्ज नाही",
@@ -420,7 +428,7 @@ const translations: Record<LanguageCode, Translations> = {
       badge: "ಭಾರತದ #1 AI ಕೃಷಿ-ಫಿನ್ಟೆಕ್ ವೇದಿಕೆ",
       titleLine1: "ಸ್ಮಾರ್ಟ್ ಕೃಷಿ",
       titleLine2: "ಆರ್ಥಿಕ ಭವಿಷ್ಯ",
-      description: "ಹವಾಮಾನ ಮುನ್ಸೂಚನೆ, ಮಣ್ಣಿನ ವಿಶ್ಲೇಷಣೆ ಮತ್ತು ಉತ್ತಮ ಸಾಲಗಳನ್ನು ಪಡೆಯಲು ಜೆಮಿನಿ AI ಮೂಲಕ ಭಾರತೀಯ ರೈತರನ್ನು ಸಬಲಗೊಳಿಸುವುದು.",
+      description: "ಹವಾಮಾನ ಮುನ್ಸೂಚನೆ, ಮಣ್ಣಿನ ವಿಶ್ಲೇಷಣೆ ಮತ್ತು ಉತ್ತಮ ಸಾಲಗಳನ್ನು ಪಡೆಯಲು ಲೋನ್ AI ಮೂಲಕ ಭಾರತೀಯ ರೈತರನ್ನು ಸಬಲಗೊಳಿಸುವುದು.",
       ctaLoan: "ಸಾಲ ಅರ್ಹತೆ ಪರಿಶೀಲಿಸಿ",
       ctaMandi: "ಬೆಳೆ ದರಗಳು"
     },
@@ -506,6 +514,8 @@ const translations: Record<LanguageCode, Translations> = {
       title: "ನನ್ನ ಕಿಸಾನ್ ಪ್ರೊಫೈಲ್",
       farmerProfile: "ರೈತ ಪ್ರೊಫೈಲ್",
       idCard: "ಗುರುತಿನ ಚೀಟಿ",
+      mobile: "ಮೊಬೈಲ್ ಸಂಖ್ಯೆ",
+      aadhaar: "ಆಧಾರ್ ಕಾರ್ಡ್",
       loanStatus: "ಸಾಲದ ಸ್ಥಿತಿ",
       activeLoan: "ಸಕ್ರಿಯ KCC ಸಾಲ",
       noActiveLoan: "ಯಾವುದೇ ಸಕ್ರಿಯ ಸಾಲವಿಲ್ಲ",
@@ -520,7 +530,7 @@ const translations: Record<LanguageCode, Translations> = {
       badge: "இந்தியாவின் #1 AI அக்ரி-ஃபின்டெக் தளம்",
       titleLine1: "ஸ்மார்ட் விவசாயம்",
       titleLine2: "நிதி எதிர்காலம்",
-      description: "வானிலை முன்னறிவிப்பு, மண் பகுப்பாய்வு மற்றும் சிறந்த கடன்களைப் பெற ஜெமினி AI மூலம் இந்திய விவசாயிகளுக்கு அதிகாரம் அளித்தல்.",
+      description: "வானிலை முன்னறிவிப்பு, மண் பகுப்பாய்வு மற்றும் சிறந்த கடன்களைப் பெற லோன் AI மூலம் இந்திய விவசாயிகளுக்கு அதிகாரம் அளித்தல்.",
       ctaLoan: "கடன் தகுதியை சரிபார்க்கவும்",
       ctaMandi: "பயிர் விலைகள்"
     },
@@ -606,6 +616,8 @@ const translations: Record<LanguageCode, Translations> = {
       title: "என் கிசான் சுயவிவரம்",
       farmerProfile: "விவசாயி சுயவிவரம்",
       idCard: "அடையாள அட்டை",
+      mobile: "கைபேசி எண்",
+      aadhaar: "ஆதார் அட்டை",
       loanStatus: "கடன் நிலை",
       activeLoan: "செயலில் உள்ள KCC கடன்",
       noActiveLoan: "செயலில் கடன் இல்லை",
@@ -620,7 +632,7 @@ const translations: Record<LanguageCode, Translations> = {
       badge: "భారతదేశపు #1 AI అగ్రి-ఫిన్‌టెక్ ప్లాట్‌ఫారమ్",
       titleLine1: "స్మార్ట్ వ్యవసాయం",
       titleLine2: "ఆర్థిక భవిష్యత్తు",
-      description: "వాతావరణ సూచన, నేల విశ్లేషణ మరియు ఉత్తమ రుణాలు పొందడానికి జెమిని AIతో భారతీయ రైతులకు సాధికారత.",
+      description: "వాతావరణ సూచన, నేల విశ్లేషణ మరియు ఉత్తమ రుణాలు పొందడానికి లోన్ AIతో భారతీయ రైతులకు సాధికారత.",
       ctaLoan: "రుణ అర్హతను తనిఖీ చేయండి",
       ctaMandi: "పంట ధరలు"
     },
@@ -677,7 +689,7 @@ const translations: Record<LanguageCode, Translations> = {
     },
     score: {
       label: "రైతు సిబిల్ (CIBIL) స్కోర్",
-      subtext: "గోల్డ్ ఫార్మర్ → తదుపరిసారి ₹1.5 లక్షల వరకు రుణం కేవలం 8% వడ్డీతో"
+      subtext: "గోల్డ్ ఫార్ಮರ್ → ಮುಂದಿನ ಬಾರಿ ₹1.5 ಲಕ್ಷ ಸಾಲ ಕೇವಲ 8% ಬಡ್ಡಿದರದಲ್ಲಿ"
     },
     emergency: {
       btn: "పంట నష్టపోయారా? 2 గంటల్లో రుణం",
@@ -706,6 +718,8 @@ const translations: Record<LanguageCode, Translations> = {
       title: "నా కిసాన్ ప్రొఫైల్",
       farmerProfile: "రైతు ప్రొఫైల్",
       idCard: "గుర్తింపు కార్డు",
+      mobile: "మొబైల్ నంబర్",
+      aadhaar: "ఆధార్ కార్డు",
       loanStatus: "రుణ స్థితి",
       activeLoan: "యాక్టివ్ KCC లోన్",
       noActiveLoan: "యాక్టివ్ లోన్లు లేవు",

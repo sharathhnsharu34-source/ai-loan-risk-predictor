@@ -160,7 +160,7 @@ const Features: React.FC = () => {
             <div className="p-4 rounded-full bg-emerald-100 dark:bg-emerald-900/50 mb-2">
                <Sprout size={40} className="text-emerald-600 dark:text-emerald-400" />
             </div>
-            <span className="text-emerald-800 dark:text-emerald-200 font-bold tracking-widest text-sm">GEMINI AI</span>
+            <span className="text-emerald-800 dark:text-emerald-200 font-bold tracking-widest text-sm">LOAN AI</span>
             <span className="text-[10px] text-emerald-600 dark:text-emerald-300 font-medium mt-1 uppercase bg-emerald-100 dark:bg-emerald-900/40 px-2 py-0.5 rounded-full">Active</span>
           </div>
 
@@ -175,22 +175,30 @@ const Features: React.FC = () => {
              return (
                <div
                  key={feature.id}
-                 className={`absolute transition-all duration-500 transform -translate-x-1/2 -translate-y-1/2 z-30 cursor-pointer group`}
+                 className={`absolute transition-all duration-500 transform -translate-x-1/2 -translate-y-1/2 z-10`}
                  style={{ top: `${top}%`, left: `${left}%` }}
-                 onMouseEnter={() => setActiveFeature(idx)}
                >
-                 {/* The Node Circle */}
-                 <div className={`w-20 h-20 rounded-full flex items-center justify-center border-2 transition-all duration-300 shadow-xl ${isActive ? 'bg-white dark:bg-slate-800 border-emerald-500 scale-110 shadow-emerald-200 dark:shadow-emerald-900/50' : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:border-emerald-300'}`}>
-                   <div className={`${isActive ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-400 dark:text-slate-500'} transition-colors`}>
+                 <div 
+                   className={`
+                     relative flex flex-col items-center justify-center 
+                     w-24 h-24 rounded-full shadow-lg border-2 
+                     transition-all duration-300 cursor-pointer
+                     ${isActive ? `${feature.bg} ${feature.border} scale-110` : 'bg-white dark:bg-slate-800 border-slate-100 dark:border-slate-700 scale-100 opacity-80 hover:opacity-100 hover:scale-105'}
+                   `}
+                   onClick={() => setActiveFeature(idx)}
+                 >
+                   <div className={`${isActive ? 'text-slate-800 dark:text-slate-100' : 'text-slate-400 dark:text-slate-500'}`}>
                      {feature.icon}
                    </div>
                  </div>
-
-                 {/* The Floating Card */}
-                 <div className={`absolute top-24 left-1/2 -translate-x-1/2 w-72 bg-white dark:bg-slate-800 p-5 rounded-lg border-t-4 shadow-xl transition-all duration-500 z-40 ${isActive ? `opacity-100 translate-y-0 ${feature.border.replace('border', 'border-t')} ${feature.border.replace('border', 'border')}` : 'opacity-0 translate-y-4 pointer-events-none'}`}>
-                   <h4 className={`font-bold mb-2 text-lg ${feature.color}`}>{feature.title}</h4>
-                   <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{feature.desc}</p>
-                 </div>
+                 
+                 {/* Floating Label for Active Item */}
+                 {isActive && (
+                    <div className="absolute top-28 left-1/2 -translate-x-1/2 w-48 text-center bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm p-3 rounded-lg shadow-xl border border-emerald-100 dark:border-slate-700 animate-in fade-in slide-in-from-top-2">
+                      <h4 className={`font-bold text-sm ${feature.color} mb-1`}>{feature.title}</h4>
+                      <p className="text-[10px] text-slate-600 dark:text-slate-300 leading-tight">{feature.desc}</p>
+                    </div>
+                 )}
                </div>
              );
           })}

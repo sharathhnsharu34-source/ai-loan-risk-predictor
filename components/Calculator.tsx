@@ -19,7 +19,7 @@ const Calculator: React.FC = () => {
     crop: 'Wheat',
     landSize: 5,
     location: '',
-    loanAmount: 500000,
+    loanAmount: 200000,
     soilType: 'Alluvial',
     season: 'Rabi'
   });

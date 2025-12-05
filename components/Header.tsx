@@ -48,7 +48,7 @@ const Header: React.FC = () => {
 
   return (
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-md py-3 border-b border-emerald-100 dark:border-slate-800' : 'bg-transparent py-6'}`}>
-      <div className="container mx-auto px-6 flex items-center justify-between">
+      <div className="w-full px-4 md:px-10 flex items-center justify-between">
         <div className={`flex items-center gap-2 font-bold text-xl tracking-tight ${scrolled ? 'text-emerald-900 dark:text-emerald-400' : 'text-white'}`}>
           <div className="w-8 h-8 bg-emerald-600 rounded-lg flex items-center justify-center shadow-lg">
             <Sprout size={20} className="text-white" />

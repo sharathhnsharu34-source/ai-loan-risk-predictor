@@ -3,8 +3,8 @@ import React, { createContext, useContext, useState, ReactNode, useEffect } from
 interface UserProfile {
   name: string;
   location: string;
-  method: 'mobile' | 'aadhaar';
-  identifier: string;
+  mobile: string;
+  aadhaar: string;
   crop: string;
   loanStatus: 'Active' | 'None';
   loanAmount?: number;
@@ -33,11 +33,25 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   }, []);
 
   const login = (method: 'mobile' | 'aadhaar', identifier: string) => {
+    // Generate the missing counterpart for a complete profile simulation
+    let mobile = "9876543210";
+    let aadhaar = "8745 1254 9988";
+
+    if (method === 'mobile') {
+        mobile = identifier;
+        // Mock aadhaar if logged in with mobile
+        aadhaar = "8745 1254 9988"; 
+    } else {
+        aadhaar = identifier;
+        // Mock mobile if logged in with aadhaar
+        mobile = "9876543210";
+    }
+
     const mockUser: UserProfile = {
       name: "Ram Singh Ji",
       location: "Bhopur Village",
-      method,
-      identifier,
+      mobile,
+      aadhaar,
       crop: "Not Selected",
       loanStatus: 'Active',
       loanAmount: 75000
